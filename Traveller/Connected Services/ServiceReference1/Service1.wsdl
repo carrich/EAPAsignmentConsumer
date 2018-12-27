@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53729/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53729/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53729/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfServiceTravel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_createImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:createImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTrallerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrallerById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTrallerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrallerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTrallerByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrallerByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTrallerByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrallerByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetImageByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetImageByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostDetail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTravelers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTravelers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTravelers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTravelersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComments" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCommentsbyPostId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsbyPostId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCommentsbyPostId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsbyPostIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostComment" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CurrentPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:CurrentPost" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CurrentPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CurrentPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImages" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ImagePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImagePost" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ImagePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImagePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ImageUserPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImageUserPost" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ImageUserPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImageUserPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPosts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Registor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Registor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Registor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Post1_InputMessage">
+    <wsdl:part name="parameters" element="tns:Post1" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Post1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Post1Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Post_InputMessage">
+    <wsdl:part name="parameters" element="tns:Post" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Post_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="createImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createImage" message="tns:IService1_createImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createImageResponse" message="tns:IService1_createImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Login" message="tns:IService1_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginResponse" message="tns:IService1_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrallerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTrallerById" message="tns:IService1_GetTrallerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTrallerByIdResponse" message="tns:IService1_GetTrallerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrallerByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTrallerByEmail" message="tns:IService1_GetTrallerByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTrallerByEmailResponse" message="tns:IService1_GetTrallerByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImageByUserId" message="tns:IService1_GetImageByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImageByUserIdResponse" message="tns:IService1_GetImageByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostDetail" message="tns:IService1_PostDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostDetailResponse" message="tns:IService1_PostDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTravelers" message="tns:IService1_GetTravelers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTravelersResponse" message="tns:IService1_GetTravelers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchImage" message="tns:IService1_SearchImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchImageResponse" message="tns:IService1_SearchImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Search" message="tns:IService1_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchResponse" message="tns:IService1_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetComments" message="tns:IService1_GetComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCommentsResponse" message="tns:IService1_GetComments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentsbyPostId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCommentsbyPostId" message="tns:IService1_GetCommentsbyPostId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCommentsbyPostIdResponse" message="tns:IService1_GetCommentsbyPostId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostComment" message="tns:IService1_PostComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostCommentResponse" message="tns:IService1_PostComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CurrentPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CurrentPost" message="tns:IService1_CurrentPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CurrentPostResponse" message="tns:IService1_CurrentPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImages" message="tns:IService1_GetImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImagesResponse" message="tns:IService1_GetImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImagePost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ImagePost" message="tns:IService1_ImagePost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ImagePostResponse" message="tns:IService1_ImagePost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImageUserPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ImageUserPost" message="tns:IService1_ImageUserPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ImageUserPostResponse" message="tns:IService1_ImageUserPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPosts" message="tns:IService1_GetPosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPostsResponse" message="tns:IService1_GetPosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Registor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Registor" message="tns:IService1_Registor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistorResponse" message="tns:IService1_Registor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Post1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Post1" message="tns:IService1_Post1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Post1Response" message="tns:IService1_Post1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Post">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Post" message="tns:IService1_Post_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostResponse" message="tns:IService1_Post_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createImage">
+      <soap:operation soapAction="http://tempuri.org/IService1/createImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IService1/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrallerById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTrallerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrallerByEmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTrallerByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageByUserId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetImageByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostDetail">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTravelers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchImage">
+      <soap:operation soapAction="http://tempuri.org/IService1/SearchImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/IService1/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentsbyPostId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCommentsbyPostId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostComment">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrentPost">
+      <soap:operation soapAction="http://tempuri.org/IService1/CurrentPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImages">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImagePost">
+      <soap:operation soapAction="http://tempuri.org/IService1/ImagePost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImageUserPost">
+      <soap:operation soapAction="http://tempuri.org/IService1/ImageUserPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosts">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registor">
+      <soap:operation soapAction="http://tempuri.org/IService1/Registor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Post1">
+      <soap:operation soapAction="http://tempuri.org/IService1/Post1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Post">
+      <soap:operation soapAction="http://tempuri.org/IService1/Post" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:53729/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

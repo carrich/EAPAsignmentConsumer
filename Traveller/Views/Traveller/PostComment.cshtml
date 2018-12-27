@@ -1,0 +1,71 @@
+﻿@model Traveller.ServiceReference1.PostComment
+
+@{
+    ViewBag.Title = "PostComment";
+    List<SelectListItem> ls = new List<SelectListItem>();
+    ls.Add(new SelectListItem() { Text = "1", Value = "1" });
+    ls.Add(new SelectListItem() { Text = "2", Value = "2" });
+    ls.Add(new SelectListItem() { Text = "3", Value = "3" });
+    ls.Add(new SelectListItem() { Text = "4", Value = "4" });
+    ls.Add(new SelectListItem() { Text = "5", Value = "5" });
+    ls.Add(new SelectListItem() { Text = "6", Value = "6" });
+    ls.Add(new SelectListItem() { Text = "7", Value = "7" });
+    ls.Add(new SelectListItem() { Text = "8", Value = "8" });
+    ls.Add(new SelectListItem() { Text = "9", Value = "9" });
+    ls.Add(new SelectListItem() { Text = "10", Value = "10" });
+
+}
+
+<h2>PostComment</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>PostComment</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+       
+
+        <div class="form-group">
+           
+            <div class="col-md-10">
+                <input type="hidden" value="@ViewBag.UserId" name="UserId" id="UserId" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vote, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               @Html.DropDownList("Vote",ls,"Select marks")
+                @Html.ValidationMessageFor(model => model.Vote, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.comment1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.comment1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.comment1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+          
+            <div class="col-md-10">
+                <input type="hidden" value="@ViewBag.postId" name="postId" id="postId" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Comment" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

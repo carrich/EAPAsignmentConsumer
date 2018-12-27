@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Traveller.ServiceReference1.PostComment>
+
+@{
+    ViewBag.Title = "PostCommentIndex";
+}
+
+<h2>PostCommentIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comment1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "PostDetail", new { id=item.Id  }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

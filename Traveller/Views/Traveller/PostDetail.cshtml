@@ -1,0 +1,107 @@
+﻿@model Traveller.Models.PostDetail
+
+@{
+    ViewBag.Title = "PostDetail";
+    List<SelectListItem> ls = new List<SelectListItem>();
+    ls.Add(new SelectListItem() { Text = "1", Value = "1" });
+    ls.Add(new SelectListItem() { Text = "2", Value = "2" });
+    ls.Add(new SelectListItem() { Text = "3", Value = "3" });
+    ls.Add(new SelectListItem() { Text = "4", Value = "4" });
+    ls.Add(new SelectListItem() { Text = "5", Value = "5" });
+    ls.Add(new SelectListItem() { Text = "6", Value = "6" });
+    ls.Add(new SelectListItem() { Text = "7", Value = "7" });
+    ls.Add(new SelectListItem() { Text = "8", Value = "8" });
+    ls.Add(new SelectListItem() { Text = "9", Value = "9" });
+    ls.Add(new SelectListItem() { Text = "10", Value = "10" });
+}
+
+<h2>PostDetail</h2>
+
+<div>
+    <h4>@Model.Title</h4>
+    <br />
+    <div><img src="@Url.Content(Model.ImagePath)" alt="Alternate Text" width="50" /></div>
+    <h6><span>@Model.firstName</span><span>@Model.lastName</span><span>   </span><span>@Model.CreatedAt</span></h6>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+
+    </dl>
+</div>
+
+@foreach (var item in ViewData["ImageList"] as IList<ImagePost>)
+{
+    <div>@item.Name</div>
+
+    <div>
+        <img src="@Url.Content(item.Path)" width="250" height="250" />
+    </div>
+}
+@foreach (var item in ViewData["CommentList"] as IList<Traveller.Models.CommentDetail>)
+{
+    <div>@item.comment1</div>
+
+    <div>Mark: @item.Mark</div>
+    <div><img src="@Url.Content(item.ImagePath)" alt="Alternate Text" width="50" /></div>
+    <div>
+        <span>@item.firstName</span><span>@item.lastName</span><span>  </span><span>@item.CreatAt</span>
+    </div>
+}
+
+
+@using (Html.BeginForm("PostComment", "Traveller", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>PostComment</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <input type="hidden" value="@ViewBag.UserId" name="UserId" id="UserId" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Vote</div>
+          
+            <div class="col-md-10">
+                @Html.DropDownList("Vote", ls, "Select marks")
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Comment</div>
+            <div class="col-md-10">
+                <input type="text"  name="comment1" id="comment1" />
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <input type="hidden" value="@ViewBag.postId" name="postId" id="postId" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Comment" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<p>
+  
+    @Html.ActionLink("Back to List", "Search")
+</p>
